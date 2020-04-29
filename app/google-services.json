@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "58585801504",
+    "firebase_url": "https://my-wallet-5c12e.firebaseio.com",
+    "project_id": "my-wallet-5c12e",
+    "storage_bucket": "my-wallet-5c12e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58585801504:android:eb6c68f8089efd4eebad45",
+        "android_client_info": {
+          "package_name": "com.mali.mywallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58585801504-sv936u49krcaje461un2cdd4l96334p8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwqnFAyvaQjz5E1wypDvYuq81tgulrvAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58585801504-sv936u49krcaje461un2cdd4l96334p8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

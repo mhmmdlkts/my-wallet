@@ -261,15 +261,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    /*private String getRight(String path) {
-        if (path.contains(LEFT_ARROW)) {
-            path = path.split(LEFT_ARROW)[1];
-        } else if (path.contains(RIGHT_ARROW)) {
-            path = path.split(RIGHT_ARROW)[1];
-        }
-        return path;
-    }*/
-
     private void init_shared_pref() {
         sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         //sharedPref.edit().clear().commit();
@@ -307,7 +298,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK) {
-            System.out.println(lastPathFront + " " + lastPathBack);
+            System.out.println("aaa:" + lastPathFront + " " + lastPathBack);
+            System.out.println("bbb:" + requestCode+"-"+resultCode);
             if (requestCode==0) {
                 Bitmap bitmap = BitmapFactory.decodeFile(lastPathFront);
                 iButtonFrontSide.setImageBitmap(bitmap);
