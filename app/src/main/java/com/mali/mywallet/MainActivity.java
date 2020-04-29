@@ -12,6 +12,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -36,20 +39,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.mali.mywallet.ui.main.SectionsPagerAdapter;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.zip.Inflater;
+
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPref;
     private SharedPreferences.Editor editor;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +79,26 @@ public class MainActivity extends AppCompatActivity {
 
         init_shared_pref();
         init_allKarts();
+        init_add();
+    }
+
+    private void init_add() {
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+                Toast.makeText(MainActivity.this, "OKEYYY", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        AdView adView = new AdView(MainActivity.this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-2593865920560334/3334666938"); // Real
+        //adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111"); // Test
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.loadAd(adRequest);
+
     }
 
     private String getRorL(boolean getL, String path) {

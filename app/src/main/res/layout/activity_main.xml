@@ -24,6 +24,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/add_white_48dp" />
+        android:layout_marginBottom="48dp"
+        app:srcCompat="@drawable/add_white_48dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2593865920560334/3334666938"> // Real
+        //ads:adUnitId="ca-app-pub-3940256099942544/6300978111"> // Test
+    </com.google.android.gms.ads.AdView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
